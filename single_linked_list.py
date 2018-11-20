@@ -1,7 +1,8 @@
 class Node:
 
 	def __init__(self, data=None, next=None):
-
+		print(data)
+		print(next)
 		self.data=data
 		self.next=next
 
@@ -21,15 +22,17 @@ class Node:
 class SinglyLinkedList:
 
 	def __init__(self):
+		print("deepak")
 		self.head=None
 		self.size=0
 
 	def add(self,value):
 		node=Node(value)
-		node=set_next(self,head)
+		print(node)
+		node.set_next(self.head)
 		self.head=node
 		self.size += 1
-
+"""
 	def _search_node(self,value,remove=False):
 
 		current=self.head
@@ -63,6 +66,7 @@ class SinglyLinkedList:
 		return self.size
 
 
-
+"""
 obj=SinglyLinkedList()
-print(obj.add(self.10))
+print(obj.add(10))
+
