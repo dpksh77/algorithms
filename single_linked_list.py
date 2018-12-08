@@ -2,7 +2,7 @@ class Node:
 
 	def __init__(self, data=None, next=None):
 		print(data)
-		print(next)
+		#print(next)
 		self.data=data
 		self.next=next
 
@@ -22,51 +22,70 @@ class Node:
 class SinglyLinkedList:
 
 	def __init__(self):
-		print("deepak")
+		#print("deepak")
 		self.head=None
 		self.size=0
 
 	def add(self,value):
 		node=Node(value)
-		print(node)
+	#	print(node.data_value)
 		node.set_next(self.head)
+	#	print(self.head)
 		self.head=node
+	#	print(self.head)
 		self.size += 1
-"""
-	def _search_node(self,value,remove=False):
+#		print(node.data_value)
+		#node.get_data()
 
-		current=self.head
-		previous=None
+	def _search_node(self, value,remove=False):
+		current = self.head
+		previous = None
 
 		while current:
-			if current.data==value:
+			if current.data == value:
+				print("search node "+str(current.data)+" is present on position")
 				break
+
 			else:
-				previous=current
-				current=current.next
+				previous = current
+				current = current.next
 
 
 		if remove and current:
 			if previous is None:
-				self.head=current.next
+				self.head = current.next
 			else:
 				previous.set_next(current.next)
 			self.size -=1
+			print("removed successfully")
+		
+		if current==None:
+			print("search node "+str(value)+" is present not on position")
+		
+        
 
-		return current is not None
-
-
-	def remove(self,value):
+	def remove(self, value):
+		
 		return self._search_node(value,True)
-
-	def search(self, value):
+    
+	def search(self, value): 
 		return self._search_node(value)
 
-	def size(self):
-		return self.size
+	def size1(self):
+		print(self.size)
+	#	return self.size
+   # def search(self, value):
+    	#return self._search_node(value)
 
 
-"""
+
+
 obj=SinglyLinkedList()
-print(obj.add(10))
-
+obj.add(10)
+obj.add(5)
+obj.add(6)
+obj._search_node(5)
+obj.remove(5)
+obj.search(5)
+obj.size1()
+#obj.search(6)

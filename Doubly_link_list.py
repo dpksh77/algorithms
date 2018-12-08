@@ -9,7 +9,7 @@ class Node:
 
 	def
 
-
+a
 
 class Doubly_link_list:
 
